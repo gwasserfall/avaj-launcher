@@ -2,10 +2,12 @@ package avaj.weather;
 
 import avaj.aircraft.Coordinates;
 
-import javax.swing.text.TableView;
+import java.util.Random;
+
 
 public class WeatherProvider {
     private static WeatherProvider weatherProvider;
+    protected String[] weather = {"SUN", "RAIN", "FOG", "SNOW" };
 
     private WeatherProvider() {}
 
@@ -17,6 +19,7 @@ public class WeatherProvider {
     }
 
     public String getCurrentWeather(Coordinates coordinates) {
-        return "sun";
+        int random = new Random().nextInt(4);
+        return weather[random];
     }
 }
