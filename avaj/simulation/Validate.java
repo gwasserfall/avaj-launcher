@@ -61,9 +61,12 @@ public class Validate {
             }
 
             try {
-                Integer.parseInt(i[2]);
-                Integer.parseInt(i[3]);
-                Integer.parseInt(i[4]);
+                if (Integer.parseInt(i[2]) < 0)
+                    throw new ValidationException("Positive integers only please.");
+                if (Integer.parseInt(i[2]) < 0)
+                    throw new ValidationException("Positive integers only please.");
+                if (Integer.parseInt(i[2]) < 0)
+                    throw new ValidationException("Positive integers only please.");
             } catch (NumberFormatException e) {
                 throw new ValidationException("Syntax error in coordinates in line [" + line + "]");
             }
